@@ -6,7 +6,7 @@ import { rehypeLinks } from './plugins/rehype-links';
 import { updateFrontmatter } from './plugins/update-frontmatter';
 import getSidebar from "./tools/generate-sidebar.js"
 
-const base = 'localizer/docs';
+const base = '/';  //'localizer/docs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -38,14 +38,14 @@ export default defineConfig({
 				starlightThemeRapide(),
 			],
 			tableOfContents: {
-				minHeadingLevel: 2, 
+				minHeadingLevel: 2,
 				maxHeadingLevel: 4,
 			},
 			credits: false,
 		}),
 	],
 	markdown: {
-		rehypePlugins: [[rehypeLinks, {base}]],
+		rehypePlugins: [[rehypeLinks, { base }]],
 		remarkPlugins: [updateFrontmatter]
 	}
 });
