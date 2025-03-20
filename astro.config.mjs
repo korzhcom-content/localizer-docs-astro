@@ -7,9 +7,11 @@ import { updateFrontmatter } from './plugins/update-frontmatter';
 import getSidebar from "./tools/generate-sidebar.js"
 
 const base = ''; // 'localizer/docs';
+const site = 'https://korzh.com';
 
 // https://astro.build/config
 export default defineConfig({
+	site,
 	base,
 	trailingSlash: "never",
 	integrations: [
