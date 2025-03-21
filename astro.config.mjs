@@ -14,6 +14,9 @@ export default defineConfig({
 	site,
 	base,
 	trailingSlash: "never",
+	build: {
+		assets: '_loc_astro'
+	},
 	integrations: [
 		starlight({
 			title: 'Localizer',
