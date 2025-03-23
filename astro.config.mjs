@@ -6,17 +6,19 @@ import { rehypeLinks } from './plugins/rehype-links';
 import { updateFrontmatter } from './plugins/update-frontmatter';
 import getSidebar from "./tools/generate-sidebar.js"
 
-const base = ''; // 'localizer/docs';
+const base = 'localizer/docs';
 const site = 'https://korzh.com';
+const outDir = './dist/localizer/docs';
 
 // https://astro.build/config
 export default defineConfig({
 	site,
 	base,
+	outDir,
 	trailingSlash: "never",
-	build: {
-		assets: '_loc_astro'
-	},
+	// build: {
+	// 	assets: '_loc_astro'
+	// },
 	integrations: [
 		starlight({
 			title: 'Localizer',
@@ -26,10 +28,10 @@ export default defineConfig({
 				discord: 'https://discord.gg',
 			},
 			sidebar: [
-				...getSidebar("./src/content/docs/localizer/docs/introduction", true),
-				...getSidebar("./src/content/docs/localizer/docs/language-wizard", true),
-				...getSidebar("./src/content/docs/localizer/docs/language-manager", true),
-				...getSidebar("./src/content/docs/localizer/docs/localizer-reference", true),
+				...getSidebar("./src/content/docs/introduction", true),
+				...getSidebar("./src/content/docs/language-wizard", true),
+				...getSidebar("./src/content/docs/language-manager", true),
+				...getSidebar("./src/content/docs/localizer-reference", true),
 			],
 			customCss: [
 				'./src/styles/index.css',
